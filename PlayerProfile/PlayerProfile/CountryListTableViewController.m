@@ -61,7 +61,6 @@ static NSString *cellIdentifier = @"Country";
     [reqOp setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
          self.weather = (NSDictionary *)responseObject;
          [self.tableView reloadData];
-        
     }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
          UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message: [error localizedDescription] delegate:nil cancelButtonTitle: @"ok" otherButtonTitles:nil, nil];
@@ -127,9 +126,13 @@ static NSString *cellIdentifier = @"Country";
             break;
     }
     
-    // Set the cell's label
-    cell.textLabel.text = [weather weatherDescription];
-    
+    // Because this is a custom designed cell, you can no longer use UITableViewCell’s textLabel and detailTextLabel properties
+    // to put text into the labels. These properties refer to labels that aren’t on this cell anymore; they are only valid
+    // for the standard cell types. Instead, you will use tags to find the labels as below.
+
+    // Country Thumbnail URL
+    __weak UIImageView *imageView = (UIImageView *)[cell viewWithTag:100];
+
     NSURL *url = [NSURL URLWithString:weather.weatherIconURL];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -141,15 +144,20 @@ static NSString *cellIdentifier = @"Country";
     // reference cycle results. To avoid the cycle, you need to create a weak (or __block) reference to self outside the block, as in the
     // example above.
     __weak UITableViewCell *weakCell = cell;
-   
-    [cell.imageView setImageWithURLRequest:request
+    
+    [imageView setImageWithURLRequest:request
                           placeholderImage:placeHolderImage
                                    success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
                                        
-                                       weakCell.imageView.image = image;
+                                       imageView.image = image;
                                        [weakCell setNeedsLayout];
                                        
                                    } failure:nil];
+  
+    // Country name
+    UILabel *label = (UILabel *)[cell viewWithTag:101];
+    label.text = [weather weatherDescription];
+    
     return cell;
 }
 
