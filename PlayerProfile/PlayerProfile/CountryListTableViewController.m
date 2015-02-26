@@ -39,8 +39,8 @@ static NSString *cellIdentifier = @"Country";
 }
 
 -(void) initUI {
-    // Set the table properties
-    //self.tableView.contentInset = UIEdgeInsetsMake(0, -20, 0, 0);
+    // Tableview specific setting
+    //[self.tableView setAlwaysBounceVertical:YES];
     
     // Try getting the country list
     PlayerProfileApiDataProvider *playerProfileApiDataProvider = [PlayerProfileApiDataProvider getInstance];
