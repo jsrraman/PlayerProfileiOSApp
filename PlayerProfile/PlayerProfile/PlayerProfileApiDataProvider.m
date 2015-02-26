@@ -41,7 +41,8 @@
 - (void)getCountryList {
  
     // Construct the actual URL string
-    NSString *actualUrlString = [NSString stringWithFormat:@"%@weather.php?format=json", BaseURLString];
+    //NSString *actualUrlString = [NSString stringWithFormat:@"%@weather.php?format=json", BaseURLString];
+    NSString *actualUrlString = [NSString stringWithFormat:@"%@%@", PlayerProfileWebServicesBaseUrl, getCountryListUrl];
 
     // Try getting the country list and based on the response call the delegate methods in the registrar
     [self GET:actualUrlString parameters:nil

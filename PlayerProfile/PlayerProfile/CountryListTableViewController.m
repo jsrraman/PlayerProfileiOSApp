@@ -11,11 +11,14 @@
 #import "NSDictionary+weather.h"
 #import "NSDictionary+weather_package.h"
 #import "UIImageView+AFNetworking.h"
+#import "CountryListWSJSONRespModel.h"
 
 //static NSString * const BaseURLString = @"http://www.raywenderlich.com/demos/weather_sample/";
 
 @interface CountryListTableViewController ()
-@property(strong) NSDictionary *weather;
+
+@property(nonatomic, strong) NSArray *countryModel;
+
 @end
 
 @implementation CountryListTableViewController
@@ -41,8 +44,17 @@ static NSString *cellIdentifier = @"Country";
 #pragma mark - PlayerProfileApiDataProvider delegate methods
 
 -(void) playerProfileApiDataProvider:(PlayerProfileApiDataProvider *)dataProvider didSucceed:(id)data {
-    self.weather = (NSDictionary *)data;
-    [self.tableView reloadData];
+    
+    // Get the data which is already in the dictionary format into CountryListWSJSONRespModel
+    CountryListWSJSONRespModel *countryListWSJSONRespModel = [[CountryListWSJSONRespModel alloc] initWithDictionary:data error:nil];
+    
+    // Get the country list
+    self.countryModel = countryListWSJSONRespModel.result;
+    
+    // Update the UI thread asynchronously
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
 }
 
 -(void) playerProfileApiDataProvider:(PlayerProfileApiDataProvider *)dataProvider didFailWithError:(NSError *)error {
@@ -57,31 +69,17 @@ static NSString *cellIdentifier = @"Country";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 2;
+    return 1;
 }
 
 // Return the number of rows in the table view
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    // Check whether we have received the proper JSON response object
-    if (!self.weather) {
+    if (!self.countryModel) {
         return 0;
+    } else {
+        return [self.countryModel count];
     }
-    
-    switch (section) {
-        case 0 : {
-            return 1;
-        }
-            
-        case 1 : {
-            NSArray *upcomingWeather = [self.weather upcomingWeather];
-            return [upcomingWeather count];
-        }
-            
-        default:
-            return 0;
-    }
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -89,32 +87,17 @@ static NSString *cellIdentifier = @"Country";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    
-    NSDictionary *weather = nil;
-    
-    switch (indexPath.section) {
-        case 0: {
-            weather = [self.weather currentCondition];
-            break;
-        }
-            
-        case 1: {
-            NSArray *upcomingWeather = [self.weather upcomingWeather];
-            weather = upcomingWeather[indexPath.row];
-        }
-            
-        default:
-            break;
-    }
+   
+    // Get the row object from countryModel array list
+    CountryModel *countryModel = self.countryModel[indexPath.row];
     
     // Because this is a custom designed cell, you can no longer use UITableViewCell’s textLabel and detailTextLabel properties
     // to put text into the labels. These properties refer to labels that aren’t on this cell anymore; they are only valid
     // for the standard cell types. Instead, you will use tags to find the labels as below.
-
     // Country Thumbnail URL
     __weak UIImageView *imageView = (UIImageView *)[cell viewWithTag:100];
 
-    NSURL *url = [NSURL URLWithString:weather.weatherIconURL];
+    NSURL *url = [NSURL URLWithString:countryModel.thumbnailUrl];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     UIImage *placeHolderImage = [UIImage imageNamed:@"placeholder"];
@@ -137,7 +120,7 @@ static NSString *cellIdentifier = @"Country";
   
     // Country name
     UILabel *label = (UILabel *)[cell viewWithTag:101];
-    label.text = [weather weatherDescription];
+    label.text = countryModel.name;
     
     return cell;
 }
