@@ -30,15 +30,23 @@ static NSString *cellIdentifier = @"Country";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    PlayerProfileApiDataProvider *playerProfileApiDataProvider = [PlayerProfileApiDataProvider getInstance];
-    playerProfileApiDataProvider.delegate = self;
-    
-    [playerProfileApiDataProvider getCountryList];
+    [self initUI];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) initUI {
+    // Set the table properties
+    //self.tableView.contentInset = UIEdgeInsetsMake(0, -20, 0, 0);
+    
+    // Try getting the country list
+    PlayerProfileApiDataProvider *playerProfileApiDataProvider = [PlayerProfileApiDataProvider getInstance];
+    playerProfileApiDataProvider.delegate = self;
+    
+    [playerProfileApiDataProvider getCountryList];
 }
 
 #pragma mark - PlayerProfileApiDataProvider delegate methods
