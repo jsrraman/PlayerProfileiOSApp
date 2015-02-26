@@ -12,7 +12,7 @@
 #import "NSDictionary+weather_package.h"
 #import "UIImageView+AFNetworking.h"
 
-static NSString * const BaseURLString = @"http://www.raywenderlich.com/demos/weather_sample/";
+//static NSString * const BaseURLString = @"http://www.raywenderlich.com/demos/weather_sample/";
 
 @interface CountryListTableViewController ()
 @property(strong) NSDictionary *weather;
@@ -27,13 +27,10 @@ static NSString *cellIdentifier = @"Country";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    PlayerProfileApiDataProvider *playerProfileApiDataProvider = [PlayerProfileApiDataProvider getInstance];
+    playerProfileApiDataProvider.delegate = self;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    [self loadCountryList];
+    [playerProfileApiDataProvider getCountryList];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,36 +38,20 @@ static NSString *cellIdentifier = @"Country";
     // Dispose of any resources that can be recreated.
 }
 
-- (void) loadCountryList {
-    
-    // Construct the actual URL string
-    NSString *actualUrlString = [NSString stringWithFormat:@"%@weather.php?format=json", BaseURLString];
-    
-    // Construct the URL object
-    NSURL *url = [NSURL URLWithString:actualUrlString];
-    
-    // Construct the NSURLRequest object
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    // Create an HTTP request using AFNetworking API
-    AFHTTPRequestOperation *reqOp = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    
-    // The response will be JSON, so set the serializer accordingly
-    reqOp.responseSerializer = [AFJSONResponseSerializer serializer];
-    
-    [reqOp setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-         self.weather = (NSDictionary *)responseObject;
-         [self.tableView reloadData];
-    }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message: [error localizedDescription] delegate:nil cancelButtonTitle: @"ok" otherButtonTitles:nil, nil];
-         
-         [alertView show];
-     }];
-    
-    // Start the HTTP request asynchronously
-    [reqOp start];
+#pragma mark - PlayerProfileApiDataProvider delegate methods
+
+-(void) playerProfileApiDataProvider:(PlayerProfileApiDataProvider *)dataProvider didSucceed:(id)data {
+    self.weather = (NSDictionary *)data;
+    [self.tableView reloadData];
 }
+
+-(void) playerProfileApiDataProvider:(PlayerProfileApiDataProvider *)dataProvider didFailWithError:(NSError *)error {
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message: [error localizedDescription] delegate:nil
+                                              cancelButtonTitle: @"ok" otherButtonTitles:nil, nil];
+    [alertView show];
+}
+
 
 #pragma mark - Table view data source
 

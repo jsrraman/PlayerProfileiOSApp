@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PlayerProfileApiDataProvider.h"
 
-@interface CountryListTableViewController : UITableViewController
+@interface CountryListTableViewController : UITableViewController <PlayerProfileApiDataProviderDelegate>
 
 @end

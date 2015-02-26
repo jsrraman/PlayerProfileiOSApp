@@ -10,6 +10,7 @@
 		2A3F0DB71A9DCA8500CA5A99 /* NSDictionary+weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DB41A9DCA8500CA5A99 /* NSDictionary+weather.m */; };
 		2A3F0DB81A9DCA8500CA5A99 /* NSDictionary+weather_package.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DB61A9DCA8500CA5A99 /* NSDictionary+weather_package.m */; };
 		2A3F0DBA1A9E3E9000CA5A99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A3F0DB91A9E3E9000CA5A99 /* Main.storyboard */; };
+		2A3F0DBD1A9EDA9B00CA5A99 /* PlayerProfileApiDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DBC1A9EDA9B00CA5A99 /* PlayerProfileApiDataProvider.m */; };
 		2A47FA591A9D955F00BAAF00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A47FA581A9D955F00BAAF00 /* main.m */; };
 		2A47FA5C1A9D955F00BAAF00 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A47FA5B1A9D955F00BAAF00 /* AppDelegate.m */; };
 		2A47FA641A9D955F00BAAF00 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A47FA631A9D955F00BAAF00 /* Images.xcassets */; };
@@ -51,6 +52,8 @@
 		2A3F0DB51A9DCA8500CA5A99 /* NSDictionary+weather_package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+weather_package.h"; sourceTree = "<group>"; };
 		2A3F0DB61A9DCA8500CA5A99 /* NSDictionary+weather_package.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+weather_package.m"; sourceTree = "<group>"; };
 		2A3F0DB91A9E3E9000CA5A99 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2A3F0DBB1A9EDA9B00CA5A99 /* PlayerProfileApiDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerProfileApiDataProvider.h; path = PlayerProfile/PlayerProfileApiDataProvider.h; sourceTree = "<group>"; };
+		2A3F0DBC1A9EDA9B00CA5A99 /* PlayerProfileApiDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerProfileApiDataProvider.m; path = PlayerProfile/PlayerProfileApiDataProvider.m; sourceTree = "<group>"; };
 		2A47FA531A9D955F00BAAF00 /* PlayerProfile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayerProfile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A47FA571A9D955F00BAAF00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A47FA581A9D955F00BAAF00 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -131,9 +134,19 @@
 			path = PlayerProfile/Weather;
 			sourceTree = "<group>";
 		};
+		2A3F0DBE1A9EDAAF00CA5A99 /* PlayerProfileApiDataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				2A3F0DBB1A9EDA9B00CA5A99 /* PlayerProfileApiDataProvider.h */,
+				2A3F0DBC1A9EDA9B00CA5A99 /* PlayerProfileApiDataProvider.m */,
+			);
+			name = PlayerProfileApiDataProvider;
+			sourceTree = "<group>";
+		};
 		2A47FA4A1A9D955F00BAAF00 = {
 			isa = PBXGroup;
 			children = (
+				2A3F0DBE1A9EDAAF00CA5A99 /* PlayerProfileApiDataProvider */,
 				2A3F0DB91A9E3E9000CA5A99 /* Main.storyboard */,
 				2A3F0DB21A9DCA8500CA5A99 /* Weather */,
 				2A47FA7F1A9DA77C00BAAF00 /* AFNetworking */,
@@ -354,6 +367,7 @@
 				2A3F0DB81A9DCA8500CA5A99 /* NSDictionary+weather_package.m in Sources */,
 				2A47FAAC1A9DA77C00BAAF00 /* AFURLResponseSerialization.m in Sources */,
 				2A47FAAA1A9DA77C00BAAF00 /* AFURLConnectionOperation.m in Sources */,
+				2A3F0DBD1A9EDA9B00CA5A99 /* PlayerProfileApiDataProvider.m in Sources */,
 				2A47FAB11A9DA77C00BAAF00 /* UIButton+AFNetworking.m in Sources */,
 				2A47FAAF1A9DA77C00BAAF00 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				2A47FAA91A9DA77C00BAAF00 /* AFSecurityPolicy.m in Sources */,
