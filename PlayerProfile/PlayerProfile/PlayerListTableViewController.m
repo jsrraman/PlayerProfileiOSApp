@@ -6,24 +6,25 @@
 //  Copyright (c) 2015 Rajaraman. All rights reserved.
 //
 
-#import "CountryListTableViewController.h"
+#import "PlayerListTableViewController.h"
 #import "AFNetworking.h"
 #import "NSDictionary+weather.h"
 #import "NSDictionary+weather_package.h"
 #import "UIImageView+AFNetworking.h"
-#import "CountryListWSJSONRespModel.h"
+#import "PlayerListWSJSONRespModel.h"
 
-@interface CountryListTableViewController ()
+@interface PlayerListTableViewController ()
 
-@property(nonatomic, strong) NSArray *countryModel;
+@property(nonatomic, strong) NSArray *playerModel;
+@property(nonatomic, strong) PlayerProfileApiDataProvider *playerProfileApiDataProvider;
 
 @end
 
-@implementation CountryListTableViewController
+@implementation PlayerListTableViewController
 
 // This will be called multiple times inside cellForRowAtIndexPath: method, so
 // keeping it static improves performance
-static NSString *cellIdentifier = @"Country";
+static NSString *cellIdentifier = @"Player";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,10 +39,10 @@ static NSString *cellIdentifier = @"Country";
 
 -(void) initUI {
     // Try getting the country list
-    PlayerProfileApiDataProvider *playerProfileApiDataProvider = [PlayerProfileApiDataProvider getInstance];
-    playerProfileApiDataProvider.delegate = self;
+    self.playerProfileApiDataProvider = [PlayerProfileApiDataProvider getInstance];
+    self.playerProfileApiDataProvider.delegate = self;
     
-    [playerProfileApiDataProvider getCountryList];
+    [self.playerProfileApiDataProvider getPlayerListForCountryId:2];
 }
 
 #pragma mark - PlayerProfileApiDataProvider delegate methods
@@ -53,12 +54,13 @@ static NSString *cellIdentifier = @"Country";
     
     switch(apiType) {
             
-        case PlayerProfileApiGetCountryList: {
-            [self handleGetCountryListAPIResponse:data];
+        case PlayerProfileApiGetPlayerListForCountry: {
+            [self handleGetPlayerListApiResponse:data];
             break;
         }
             
-        case PlayerProfileApiScrapeCountryList: {
+        case PlayerProfileApiScrapePlayerListForCountry: {
+            [self handleScrapePlayerListApiResponse:data];
             break;
         }
             
@@ -76,18 +78,29 @@ static NSString *cellIdentifier = @"Country";
     [alertView show];
 }
 
-// Handle Country list API response
--(void) handleGetCountryListAPIResponse:(id)data {
+// Handle Player list API response
+-(void) handleGetPlayerListApiResponse:(id)data {
     // Get the data which is already in the dictionary format into CountryListWSJSONRespModel
-    CountryListWSJSONRespModel *countryListWSJSONRespModel = [[CountryListWSJSONRespModel alloc] initWithDictionary:data error:nil];
+    PlayerListWSJSONRespModel *playerListWSJSONRespModel = [[PlayerListWSJSONRespModel alloc] initWithDictionary:data error:nil];
     
     // Get the country list
-    self.countryModel = countryListWSJSONRespModel.result;
+    self.playerModel = playerListWSJSONRespModel.result;
     
-    // Update the UI thread asynchronously
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tableView reloadData];
-    });
+    // If there is no data available for players, go scrap the data first else update the table
+    if ([self.playerModel count] == 0) {
+        [self.playerProfileApiDataProvider scrapePlayerListForCountryId:1 forCountryName:@"England"];
+    } else {
+        // Update the UI thread asynchronously
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }
+}
+
+
+// Handle Player list API response
+-(void) handleScrapePlayerListApiResponse:(id)data {
+    [self.playerProfileApiDataProvider getPlayerListForCountryId:1];
 }
 
 
@@ -101,10 +114,10 @@ static NSString *cellIdentifier = @"Country";
 // Return the number of rows in the table view
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    if (!self.countryModel) {
+    if (!self.playerModel) {
         return 0;
     } else {
-        return [self.countryModel count];
+        return [self.playerModel count];
     }
 }
 
@@ -115,15 +128,16 @@ static NSString *cellIdentifier = @"Country";
     // Configure the cell...
    
     // Get the row object from countryModel array list
-    CountryModel *countryModel = self.countryModel[indexPath.row];
+    PlayerModel *playerModel = self.playerModel[indexPath.row];
     
     // Because this is a custom designed cell, you can no longer use UITableViewCell’s textLabel and detailTextLabel properties
     // to put text into the labels. These properties refer to labels that aren’t on this cell anymore; they are only valid
     // for the standard cell types. Instead, you will use tags to find the labels as below.
-    // Country Thumbnail URL
+    // Player Thumbnail URL
     __weak UIImageView *imageView = (UIImageView *)[cell viewWithTag:100];
 
-    NSURL *url = [NSURL URLWithString:countryModel.thumbnailUrl];
+    //NSURL *url = [NSURL URLWithString:playerModel.thumbnailUrl];
+    NSURL *url = [NSURL URLWithString:@"http://i.imgci.com/espncricinfo/teams/2.jpg"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     UIImage *placeHolderImage = [UIImage imageNamed:@"placeholder"];
@@ -144,9 +158,9 @@ static NSString *cellIdentifier = @"Country";
                                        
                                    } failure:nil];
   
-    // Country name
+    // Player name
     UILabel *label = (UILabel *)[cell viewWithTag:101];
-    label.text = countryModel.name;
+    label.text = playerModel.name;
     
     return cell;
 }

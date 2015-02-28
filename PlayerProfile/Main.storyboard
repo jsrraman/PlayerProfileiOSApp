@@ -26,7 +26,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecJ-oU-iaY">
-                                            <rect key="frame" x="127" y="15" width="465" height="21"/>
+                                            <rect key="frame" x="127" y="16" width="465" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -56,34 +56,54 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uAs-YK-4Pm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1174" y="321"/>
+            <point key="canvasLocation" x="1174" y="320"/>
         </scene>
         <!--Player List-->
         <scene sceneID="Pnu-Xx-1aN">
             <objects>
-                <tableViewController id="fMe-eV-XVT" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="W5K-jj-uqH">
+                <tableViewController id="fMe-eV-XVT" customClass="PlayerListTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fj0-rG-PJG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dbp-lx-eNB">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Player" id="RCM-DN-Oe6">
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dbp-lx-eNB" id="6Bf-kc-ray">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RCM-DN-Oe6" id="SmV-VA-ABm">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ccr-tc-G6c">
+                                            <rect key="frame" x="0.0" y="0.0" width="125" height="43"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="125" id="jh2-ch-pFQ"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEG-NY-ttd">
+                                            <rect key="frame" x="133" y="2" width="467" height="43"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ccr-tc-G6c" firstAttribute="leading" secondItem="SmV-VA-ABm" secondAttribute="leadingMargin" constant="-45" id="56t-JN-Q1L"/>
+                                        <constraint firstAttribute="bottom" secondItem="Ccr-tc-G6c" secondAttribute="bottom" id="caf-Zm-ya3"/>
+                                        <constraint firstItem="Ccr-tc-G6c" firstAttribute="top" secondItem="SmV-VA-ABm" secondAttribute="top" id="kFl-Nf-rcz"/>
+                                        <constraint firstItem="uEG-NY-ttd" firstAttribute="leading" secondItem="Ccr-tc-G6c" secondAttribute="trailing" constant="-30" id="vYS-bm-qRZ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="fMe-eV-XVT" id="63A-IF-BYf"/>
-                            <outlet property="delegate" destination="fMe-eV-XVT" id="UKG-p9-xWc"/>
+                            <outlet property="dataSource" destination="fMe-eV-XVT" id="7iv-wb-1lC"/>
+                            <outlet property="delegate" destination="fMe-eV-XVT" id="BgO-nr-3Kl"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Player List" id="YU8-bH-fkg"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CqB-hE-pEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2658" y="334"/>
+            <point key="canvasLocation" x="2658" y="328"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0vH-Um-1TT">

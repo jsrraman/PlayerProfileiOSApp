@@ -8,9 +8,22 @@
 
 #import "AFHTTPSessionManager.h"
 
-static NSString* const BaseURLString = @"http://www.raywenderlich.com/demos/weather_sample/";
 static NSString* const PlayerProfileWebServicesBaseUrl = @"http://10.0.0.114:3000";
 static NSString* const getCountryListUrl = @"/players/countries";
+static NSString* const getPlayerListUrl = @"/players/country?countryId=";
+
+static NSString* const scrapePlayerListUrlPart1 = @"/scrape/players/country?countryId=";
+static NSString* const scrapePlayerListUrlPart2 = @"&name=";
+
+// API list
+typedef NS_ENUM(NSInteger, PlayerProfileApiType) {
+    PlayerProfileApiGetCountryList,
+    PlayerProfileApiScrapeCountryList,
+    PlayerProfileApiGetPlayerListForCountry,
+    PlayerProfileApiScrapePlayerListForCountry,
+    PlayerProfileApiScrapePlayerProfileForPlayerID,
+    PlayerProfileApiGetPlayerProfileForPlayerID
+};
 
 @protocol PlayerProfileApiDataProviderDelegate;
 
@@ -21,12 +34,14 @@ static NSString* const getCountryListUrl = @"/players/countries";
 + (PlayerProfileApiDataProvider *)getInstance;
 - (instancetype)initWithBaseURL:(NSURL *)url;
 - (void)getCountryList;
+- (void)getPlayerListForCountryId:(int)countryId;
+- (void)scrapePlayerListForCountryId:(int)countryId forCountryName:(NSString *)countryName;
 
 @end
 
 @protocol PlayerProfileApiDataProviderDelegate <NSObject>
 
--(void) playerProfileApiDataProvider:(PlayerProfileApiDataProvider *)dataProvider didSucceed:(id)data;
--(void) playerProfileApiDataProvider:(PlayerProfileApiDataProvider *)dataProvider didFailWithError:(NSError *)error;
+-(void) playerProfileApiType:(PlayerProfileApiType)apiType didSucceed:(id)data;
+-(void) didFailWithError:(NSError *)error;
 
 @end

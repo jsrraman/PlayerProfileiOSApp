@@ -23,6 +23,9 @@
 		2A3F0DE21A9EFA2100CA5A99 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DD81A9EFA2100CA5A99 /* JSONValueTransformer.m */; };
 		2A3F0DE51A9EFB7200CA5A99 /* CountryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DE41A9EFB7200CA5A99 /* CountryModel.m */; };
 		2A3F0DE91A9EFDD800CA5A99 /* CountryListWSJSONRespModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DE81A9EFDD800CA5A99 /* CountryListWSJSONRespModel.m */; };
+		2A3F0DEC1AA0C4F600CA5A99 /* PlayerListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DEB1AA0C4F600CA5A99 /* PlayerListTableViewController.m */; };
+		2A3F0DEF1AA1A4F800CA5A99 /* PlayerListWSJSONRespModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DEE1AA1A4F800CA5A99 /* PlayerListWSJSONRespModel.m */; };
+		2A3F0DF21AA1A53E00CA5A99 /* PlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DF11AA1A53E00CA5A99 /* PlayerModel.m */; };
 		2A47FA591A9D955F00BAAF00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A47FA581A9D955F00BAAF00 /* main.m */; };
 		2A47FA5C1A9D955F00BAAF00 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A47FA5B1A9D955F00BAAF00 /* AppDelegate.m */; };
 		2A47FA641A9D955F00BAAF00 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A47FA631A9D955F00BAAF00 /* Images.xcassets */; };
@@ -91,6 +94,12 @@
 		2A3F0DE41A9EFB7200CA5A99 /* CountryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CountryModel.m; path = PlayerProfile/CountryModel.m; sourceTree = "<group>"; };
 		2A3F0DE71A9EFDD800CA5A99 /* CountryListWSJSONRespModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CountryListWSJSONRespModel.h; path = PlayerProfile/CountryListWSJSONRespModel.h; sourceTree = "<group>"; };
 		2A3F0DE81A9EFDD800CA5A99 /* CountryListWSJSONRespModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CountryListWSJSONRespModel.m; path = PlayerProfile/CountryListWSJSONRespModel.m; sourceTree = "<group>"; };
+		2A3F0DEA1AA0C4DC00CA5A99 /* PlayerListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerListTableViewController.h; sourceTree = "<group>"; };
+		2A3F0DEB1AA0C4F600CA5A99 /* PlayerListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerListTableViewController.m; sourceTree = "<group>"; };
+		2A3F0DED1AA1A4DC00CA5A99 /* PlayerListWSJSONRespModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerListWSJSONRespModel.h; path = PlayerProfile/PlayerListWSJSONRespModel.h; sourceTree = "<group>"; };
+		2A3F0DEE1AA1A4F800CA5A99 /* PlayerListWSJSONRespModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerListWSJSONRespModel.m; path = PlayerProfile/PlayerListWSJSONRespModel.m; sourceTree = "<group>"; };
+		2A3F0DF01AA1A52F00CA5A99 /* PlayerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerModel.h; path = PlayerProfile/PlayerModel.h; sourceTree = "<group>"; };
+		2A3F0DF11AA1A53E00CA5A99 /* PlayerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerModel.m; path = PlayerProfile/PlayerModel.m; sourceTree = "<group>"; };
 		2A47FA531A9D955F00BAAF00 /* PlayerProfile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayerProfile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A47FA571A9D955F00BAAF00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A47FA581A9D955F00BAAF00 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -244,10 +253,14 @@
 		2A3F0DE61A9EFB7900CA5A99 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				2A3F0DE31A9EFB7200CA5A99 /* CountryModel.h */,
-				2A3F0DE41A9EFB7200CA5A99 /* CountryModel.m */,
 				2A3F0DE71A9EFDD800CA5A99 /* CountryListWSJSONRespModel.h */,
+				2A3F0DE31A9EFB7200CA5A99 /* CountryModel.h */,
+				2A3F0DED1AA1A4DC00CA5A99 /* PlayerListWSJSONRespModel.h */,
+				2A3F0DF01AA1A52F00CA5A99 /* PlayerModel.h */,
 				2A3F0DE81A9EFDD800CA5A99 /* CountryListWSJSONRespModel.m */,
+				2A3F0DE41A9EFB7200CA5A99 /* CountryModel.m */,
+				2A3F0DEE1AA1A4F800CA5A99 /* PlayerListWSJSONRespModel.m */,
+				2A3F0DF11AA1A53E00CA5A99 /* PlayerModel.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -255,16 +268,16 @@
 		2A47FA4A1A9D955F00BAAF00 = {
 			isa = PBXGroup;
 			children = (
+				2A3F0DB91A9E3E9000CA5A99 /* Main.storyboard */,
+				2A47FA7F1A9DA77C00BAAF00 /* AFNetworking */,
 				2A3F0DE61A9EFB7900CA5A99 /* Entities */,
 				2A3F0DBF1A9EFA2100CA5A99 /* JSONModel */,
-				2A3F0DBE1A9EDAAF00CA5A99 /* PlayerProfileApiDataProvider */,
-				2A3F0DB91A9E3E9000CA5A99 /* Main.storyboard */,
-				2A3F0DB21A9DCA8500CA5A99 /* Weather */,
-				2A47FA7F1A9DA77C00BAAF00 /* AFNetworking */,
-				2A47FA931A9DA77C00BAAF00 /* UIKit+AFNetworking */,
 				2A47FA551A9D955F00BAAF00 /* PlayerProfile */,
+				2A3F0DBE1A9EDAAF00CA5A99 /* PlayerProfileApiDataProvider */,
 				2A47FA6F1A9D955F00BAAF00 /* PlayerProfileTests */,
 				2A47FA541A9D955F00BAAF00 /* Products */,
+				2A47FA931A9DA77C00BAAF00 /* UIKit+AFNetworking */,
+				2A3F0DB21A9DCA8500CA5A99 /* Weather */,
 			);
 			sourceTree = "<group>";
 		};
@@ -283,7 +296,9 @@
 				2A47FA5A1A9D955F00BAAF00 /* AppDelegate.h */,
 				2A47FA5B1A9D955F00BAAF00 /* AppDelegate.m */,
 				2A47FA7C1A9D971000BAAF00 /* CountryListTableViewController.h */,
+				2A3F0DEA1AA0C4DC00CA5A99 /* PlayerListTableViewController.h */,
 				2A47FA7D1A9D971000BAAF00 /* CountryListTableViewController.m */,
+				2A3F0DEB1AA0C4F600CA5A99 /* PlayerListTableViewController.m */,
 				2A47FA631A9D955F00BAAF00 /* Images.xcassets */,
 				2A47FA651A9D955F00BAAF00 /* LaunchScreen.xib */,
 				2A47FA561A9D955F00BAAF00 /* Supporting Files */,
@@ -499,10 +514,13 @@
 				2A47FAAB1A9DA77C00BAAF00 /* AFURLRequestSerialization.m in Sources */,
 				2A3F0DDC1A9EFA2100CA5A99 /* JSONModelError.m in Sources */,
 				2A3F0DDA1A9EFA2100CA5A99 /* JSONModelArray.m in Sources */,
+				2A3F0DEC1AA0C4F600CA5A99 /* PlayerListTableViewController.m in Sources */,
 				2A47FAAE1A9DA77C00BAAF00 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				2A3F0DE51A9EFB7200CA5A99 /* CountryModel.m in Sources */,
 				2A47FAAD1A9DA77C00BAAF00 /* AFURLSessionManager.m in Sources */,
+				2A3F0DEF1AA1A4F800CA5A99 /* PlayerListWSJSONRespModel.m in Sources */,
 				2A47FA5C1A9D955F00BAAF00 /* AppDelegate.m in Sources */,
+				2A3F0DF21AA1A53E00CA5A99 /* PlayerModel.m in Sources */,
 				2A47FA591A9D955F00BAAF00 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

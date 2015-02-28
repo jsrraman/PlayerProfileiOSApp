@@ -41,18 +41,61 @@
 - (void)getCountryList {
  
     // Construct the actual URL string
-    //NSString *actualUrlString = [NSString stringWithFormat:@"%@weather.php?format=json", BaseURLString];
-    NSString *actualUrlString = [NSString stringWithFormat:@"%@%@", PlayerProfileWebServicesBaseUrl, getCountryListUrl];
+    NSString *fullUrlString = [NSString stringWithFormat:@"%@%@", PlayerProfileWebServicesBaseUrl, getCountryListUrl];
 
-    // Try getting the country list and based on the response call the delegate methods in the registrar
-    [self GET:actualUrlString parameters:nil
-            success: ^(NSURLSessionDataTask *task, id responseObject) {
-                [self.delegate playerProfileApiDataProvider:self didSucceed:responseObject];
-            }
+//    // Try getting the country list and based on the response call the delegate methods in the registrar
+//    [self GET:fullUrlString parameters:nil
+//            success: ^(NSURLSessionDataTask *task, id responseObject) {
+//                [self.delegate playerProfileAPIType:PlayerProfileApiGetCountryList didSucceed:responseObject];
+//            }
+//
+//            failure: ^(NSURLSessionDataTask *task, NSError *error) {
+//                [self.delegate didFailWithError:error];
+//            }];
+    
+    [self getApiResponse:fullUrlString forPlayerProfileApiType:PlayerProfileApiGetCountryList];
+}
 
-            failure: ^(NSURLSessionDataTask *task, NSError *error) {
-                [self.delegate playerProfileApiDataProvider:self didFailWithError:error];
-            }];
+- (void)getPlayerListForCountryId:(int)countryId {
+    
+    NSMutableString *fullUrlString = [NSMutableString stringWithFormat:@"%@%@", PlayerProfileWebServicesBaseUrl, getPlayerListUrl];
+    [fullUrlString appendFormat:@"%d", countryId];
+    
+//    // Try getting the player list and based on the response call the delegate methods in the registrar
+//    [self GET:fullUrlString parameters:nil
+//      success: ^(NSURLSessionDataTask *task, id responseObject) {
+//          [self.delegate playerProfileAPIType:PlayerProfileApiGetPlayerListForCountry didSucceed:responseObject];
+//      }
+//     
+//      failure: ^(NSURLSessionDataTask *task, NSError *error) {
+//          [self.delegate didFailWithError:error];
+//      }];
+    
+    [self getApiResponse:fullUrlString forPlayerProfileApiType:PlayerProfileApiGetPlayerListForCountry];
+}
+
+- (void)scrapePlayerListForCountryId:(int)countryId forCountryName:(NSString *)countryName {
+    
+    NSMutableString *fullUrlString = [NSMutableString stringWithFormat:@"%@%@", PlayerProfileWebServicesBaseUrl, scrapePlayerListUrlPart1];
+    [fullUrlString appendFormat:@"%d", countryId];
+    [fullUrlString appendString:@"&"];
+    [fullUrlString appendString:scrapePlayerListUrlPart2];
+    [fullUrlString appendString:countryName];
+    
+    [self getApiResponse:fullUrlString forPlayerProfileApiType:PlayerProfileApiScrapePlayerListForCountry];
+}
+
+- (void) getApiResponse:(NSString *)fullUrlString forPlayerProfileApiType:(PlayerProfileApiType)apiType {
+    
+    // Try hitting the web services end point
+    [self GET:fullUrlString parameters:nil
+      success: ^(NSURLSessionDataTask *task, id responseObject) {
+          [self.delegate playerProfileApiType:apiType didSucceed:responseObject];
+      }
+     
+      failure: ^(NSURLSessionDataTask *task, NSError *error) {
+          [self.delegate didFailWithError:error];
+      }];
 }
 
 @end
