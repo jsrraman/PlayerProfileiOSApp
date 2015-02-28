@@ -6,25 +6,24 @@
 //  Copyright (c) 2015 Rajaraman. All rights reserved.
 //
 
-#import "PlayerListTableViewController.h"
+#import "CountryListTableViewController.h"
 #import "AFNetworking.h"
-#import "NSDictionary+weather.h"
-#import "NSDictionary+weather_package.h"
 #import "UIImageView+AFNetworking.h"
-#import "PlayerListWSJSONRespModel.h"
+#import "CountryListWSJSONRespModel.h"
+#import "PlayerListTableViewController.h"
+#import "ImageUtility.h"
 
-@interface PlayerListTableViewController ()
+@interface CountryListTableViewController ()
 
-@property(nonatomic, strong) NSArray *playerModel;
-@property(nonatomic, strong) PlayerProfileApiDataProvider *playerProfileApiDataProvider;
+@property(nonatomic, strong) NSArray *countryModel;
 
 @end
 
-@implementation PlayerListTableViewController
+@implementation CountryListTableViewController
 
 // This will be called multiple times inside cellForRowAtIndexPath: method, so
 // keeping it static improves performance
-static NSString *cellIdentifier = @"Player";
+static NSString *cellIdentifier = @"Country";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,10 +38,10 @@ static NSString *cellIdentifier = @"Player";
 
 -(void) initUI {
     // Try getting the country list
-    self.playerProfileApiDataProvider = [PlayerProfileApiDataProvider getInstance];
-    self.playerProfileApiDataProvider.delegate = self;
+    PlayerProfileApiDataProvider *playerProfileApiDataProvider = [PlayerProfileApiDataProvider getInstance];
+    playerProfileApiDataProvider.delegate = self;
     
-    [self.playerProfileApiDataProvider getPlayerListForCountryId:2];
+    [playerProfileApiDataProvider getCountryList];
 }
 
 #pragma mark - PlayerProfileApiDataProvider delegate methods
@@ -54,13 +53,12 @@ static NSString *cellIdentifier = @"Player";
     
     switch(apiType) {
             
-        case PlayerProfileApiGetPlayerListForCountry: {
-            [self handleGetPlayerListApiResponse:data];
+        case PlayerProfileApiGetCountryList: {
+            [self handleGetCountryListAPIResponse:data];
             break;
         }
             
-        case PlayerProfileApiScrapePlayerListForCountry: {
-            [self handleScrapePlayerListApiResponse:data];
+        case PlayerProfileApiScrapeCountryList: {
             break;
         }
             
@@ -78,29 +76,18 @@ static NSString *cellIdentifier = @"Player";
     [alertView show];
 }
 
-// Handle Player list API response
--(void) handleGetPlayerListApiResponse:(id)data {
+// Handle Country list API response
+-(void) handleGetCountryListAPIResponse:(id)data {
     // Get the data which is already in the dictionary format into CountryListWSJSONRespModel
-    PlayerListWSJSONRespModel *playerListWSJSONRespModel = [[PlayerListWSJSONRespModel alloc] initWithDictionary:data error:nil];
+    CountryListWSJSONRespModel *countryListWSJSONRespModel = [[CountryListWSJSONRespModel alloc] initWithDictionary:data error:nil];
     
     // Get the country list
-    self.playerModel = playerListWSJSONRespModel.result;
+    self.countryModel = countryListWSJSONRespModel.result;
     
-    // If there is no data available for players, go scrap the data first else update the table
-    if ([self.playerModel count] == 0) {
-        [self.playerProfileApiDataProvider scrapePlayerListForCountryId:1 forCountryName:@"England"];
-    } else {
-        // Update the UI thread asynchronously
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-        });
-    }
-}
-
-
-// Handle Player list API response
--(void) handleScrapePlayerListApiResponse:(id)data {
-    [self.playerProfileApiDataProvider getPlayerListForCountryId:1];
+    // Update the UI thread asynchronously
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
 }
 
 
@@ -114,13 +101,14 @@ static NSString *cellIdentifier = @"Player";
 // Return the number of rows in the table view
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    if (!self.playerModel) {
+    if (!self.countryModel) {
         return 0;
     } else {
-        return [self.playerModel count];
+        return [self.countryModel count];
     }
 }
 
+// Configure the individual table cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
@@ -128,19 +116,24 @@ static NSString *cellIdentifier = @"Player";
     // Configure the cell...
    
     // Get the row object from countryModel array list
-    PlayerModel *playerModel = self.playerModel[indexPath.row];
+    CountryModel *countryModel = self.countryModel[indexPath.row];
     
     // Because this is a custom designed cell, you can no longer use UITableViewCell’s textLabel and detailTextLabel properties
     // to put text into the labels. These properties refer to labels that aren’t on this cell anymore; they are only valid
     // for the standard cell types. Instead, you will use tags to find the labels as below.
-    // Player Thumbnail URL
+    // Country Thumbnail URL
     __weak UIImageView *imageView = (UIImageView *)[cell viewWithTag:100];
-
-    //NSURL *url = [NSURL URLWithString:playerModel.thumbnailUrl];
-    NSURL *url = [NSURL URLWithString:@"http://i.imgci.com/espncricinfo/teams/2.jpg"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
+    NSURL *url = [NSURL URLWithString:countryModel.thumbnailUrl];
+    NSURLRequest *imageRequest = [NSURLRequest requestWithURL:url];
+    
+    // Get the place holder image
     UIImage *placeHolderImage = [UIImage imageNamed:@"placeholder"];
+    
+    // Resize the image to fit into the UIImage frame width and height
+    UIImage *resizedImage = [ImageUtility imageWithImage:placeHolderImage
+                                        scaledToMaxWidth:imageView.frame.size.width
+                                               maxHeight:imageView.frame.size.height];
     
     // Create a weak reference for the table view cell to avoid strong reference inside the block. Read below for more understanding
     // A block forms a strong reference to variables it captures. If you use  self within a block,
@@ -149,18 +142,18 @@ static NSString *cellIdentifier = @"Player";
     // example above.
     __weak UITableViewCell *weakCell = cell;
     
-    [imageView setImageWithURLRequest:request
-                          placeholderImage:placeHolderImage
+    [imageView setImageWithURLRequest:imageRequest
+                          placeholderImage:resizedImage
                                    success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                       
+                                   
                                        imageView.image = image;
                                        [weakCell setNeedsLayout];
                                        
                                    } failure:nil];
   
-    // Player name
+    // Country name
     UILabel *label = (UILabel *)[cell viewWithTag:101];
-    label.text = playerModel.name;
+    label.text = countryModel.name;
     
     return cell;
 }
@@ -199,14 +192,31 @@ static NSString *cellIdentifier = @"Player";
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"showPlayerList"]) {
+        // Get the indexPath from tableview
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        // Get the relevant entity object from the selected row index
+        CountryModel *countryModel = [self.countryModel objectAtIndex:indexPath.row];
+        
+        // Pass the selected country model to the PlayerListTableViewController
+        // Note: PlayerListTableViewController is embedded inside navigation view controller, so access accordingly as below
+        UINavigationController *uiNavigationController = (UINavigationController *)segue.destinationViewController;
+        
+        // The view controller at the top of the stack is player list table view controller
+        PlayerListTableViewController *playerListTableViewController = (PlayerListTableViewController *)
+                                                                                [uiNavigationController topViewController];
+        
+        playerListTableViewController.selCountryModel = countryModel;
+    }
 }
-*/
 
 @end

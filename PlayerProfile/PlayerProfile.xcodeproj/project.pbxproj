@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A3F0DB71A9DCA8500CA5A99 /* NSDictionary+weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DB41A9DCA8500CA5A99 /* NSDictionary+weather.m */; };
-		2A3F0DB81A9DCA8500CA5A99 /* NSDictionary+weather_package.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DB61A9DCA8500CA5A99 /* NSDictionary+weather_package.m */; };
-		2A3F0DBA1A9E3E9000CA5A99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A3F0DB91A9E3E9000CA5A99 /* Main.storyboard */; };
-		2A3F0DBD1A9EDA9B00CA5A99 /* PlayerProfileApiDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DBC1A9EDA9B00CA5A99 /* PlayerProfileApiDataProvider.m */; };
 		2A3F0DD91A9EFA2100CA5A99 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DC21A9EFA2100CA5A99 /* JSONModel.m */; };
 		2A3F0DDA1A9EFA2100CA5A99 /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DC41A9EFA2100CA5A99 /* JSONModelArray.m */; };
 		2A3F0DDB1A9EFA2100CA5A99 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DC61A9EFA2100CA5A99 /* JSONModelClassProperty.m */; };
@@ -21,17 +17,21 @@
 		2A3F0DE01A9EFA2100CA5A99 /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DD31A9EFA2100CA5A99 /* JSONModel+networking.m */; };
 		2A3F0DE11A9EFA2100CA5A99 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DD61A9EFA2100CA5A99 /* JSONKeyMapper.m */; };
 		2A3F0DE21A9EFA2100CA5A99 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DD81A9EFA2100CA5A99 /* JSONValueTransformer.m */; };
-		2A3F0DE51A9EFB7200CA5A99 /* CountryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DE41A9EFB7200CA5A99 /* CountryModel.m */; };
-		2A3F0DE91A9EFDD800CA5A99 /* CountryListWSJSONRespModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DE81A9EFDD800CA5A99 /* CountryListWSJSONRespModel.m */; };
-		2A3F0DEC1AA0C4F600CA5A99 /* PlayerListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DEB1AA0C4F600CA5A99 /* PlayerListTableViewController.m */; };
-		2A3F0DEF1AA1A4F800CA5A99 /* PlayerListWSJSONRespModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DEE1AA1A4F800CA5A99 /* PlayerListWSJSONRespModel.m */; };
-		2A3F0DF21AA1A53E00CA5A99 /* PlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DF11AA1A53E00CA5A99 /* PlayerModel.m */; };
+		2A3F0DF81AA20B8900CA5A99 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3F0DF71AA20B8900CA5A99 /* placeholder.png */; };
+		2A3F0E011AA20B9900CA5A99 /* CountryListWSJSONRespModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DFA1AA20B9900CA5A99 /* CountryListWSJSONRespModel.m */; };
+		2A3F0E021AA20B9900CA5A99 /* CountryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DFC1AA20B9900CA5A99 /* CountryModel.m */; };
+		2A3F0E031AA20B9900CA5A99 /* PlayerListWSJSONRespModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0DFE1AA20B9900CA5A99 /* PlayerListWSJSONRespModel.m */; };
+		2A3F0E041AA20B9900CA5A99 /* PlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0E001AA20B9900CA5A99 /* PlayerModel.m */; };
+		2A3F0E071AA20BB100CA5A99 /* PlayerProfileApiDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0E061AA20BB100CA5A99 /* PlayerProfileApiDataProvider.m */; };
+		2A3F0E0D1AA20BDD00CA5A99 /* CountryListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0E0A1AA20BDD00CA5A99 /* CountryListTableViewController.m */; };
+		2A3F0E0E1AA20BDD00CA5A99 /* PlayerListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0E0C1AA20BDD00CA5A99 /* PlayerListTableViewController.m */; };
+		2A3F0E101AA20C3D00CA5A99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A3F0E0F1AA20C3D00CA5A99 /* Main.storyboard */; };
+		2A3F0E181AA230F700CA5A99 /* ImageUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0E171AA230F700CA5A99 /* ImageUtility.m */; };
 		2A47FA591A9D955F00BAAF00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A47FA581A9D955F00BAAF00 /* main.m */; };
 		2A47FA5C1A9D955F00BAAF00 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A47FA5B1A9D955F00BAAF00 /* AppDelegate.m */; };
 		2A47FA641A9D955F00BAAF00 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A47FA631A9D955F00BAAF00 /* Images.xcassets */; };
 		2A47FA671A9D955F00BAAF00 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A47FA651A9D955F00BAAF00 /* LaunchScreen.xib */; };
 		2A47FA731A9D955F00BAAF00 /* PlayerProfileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A47FA721A9D955F00BAAF00 /* PlayerProfileTests.m */; };
-		2A47FA7E1A9D971000BAAF00 /* CountryListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A47FA7D1A9D971000BAAF00 /* CountryListTableViewController.m */; };
 		2A47FAA51A9DA77C00BAAF00 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A47FA811A9DA77C00BAAF00 /* AFHTTPRequestOperation.m */; };
 		2A47FAA61A9DA77C00BAAF00 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A47FA831A9DA77C00BAAF00 /* AFHTTPRequestOperationManager.m */; };
 		2A47FAA71A9DA77C00BAAF00 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A47FA851A9DA77C00BAAF00 /* AFHTTPSessionManager.m */; };
@@ -62,13 +62,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2A3F0DB31A9DCA8500CA5A99 /* NSDictionary+weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+weather.h"; sourceTree = "<group>"; };
-		2A3F0DB41A9DCA8500CA5A99 /* NSDictionary+weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+weather.m"; sourceTree = "<group>"; };
-		2A3F0DB51A9DCA8500CA5A99 /* NSDictionary+weather_package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+weather_package.h"; sourceTree = "<group>"; };
-		2A3F0DB61A9DCA8500CA5A99 /* NSDictionary+weather_package.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+weather_package.m"; sourceTree = "<group>"; };
-		2A3F0DB91A9E3E9000CA5A99 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		2A3F0DBB1A9EDA9B00CA5A99 /* PlayerProfileApiDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerProfileApiDataProvider.h; path = PlayerProfile/PlayerProfileApiDataProvider.h; sourceTree = "<group>"; };
-		2A3F0DBC1A9EDA9B00CA5A99 /* PlayerProfileApiDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerProfileApiDataProvider.m; path = PlayerProfile/PlayerProfileApiDataProvider.m; sourceTree = "<group>"; };
 		2A3F0DC11A9EFA2100CA5A99 /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
 		2A3F0DC21A9EFA2100CA5A99 /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
 		2A3F0DC31A9EFA2100CA5A99 /* JSONModelArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelArray.h; sourceTree = "<group>"; };
@@ -90,16 +83,24 @@
 		2A3F0DD61A9EFA2100CA5A99 /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
 		2A3F0DD71A9EFA2100CA5A99 /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
 		2A3F0DD81A9EFA2100CA5A99 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
-		2A3F0DE31A9EFB7200CA5A99 /* CountryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CountryModel.h; path = PlayerProfile/CountryModel.h; sourceTree = "<group>"; };
-		2A3F0DE41A9EFB7200CA5A99 /* CountryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CountryModel.m; path = PlayerProfile/CountryModel.m; sourceTree = "<group>"; };
-		2A3F0DE71A9EFDD800CA5A99 /* CountryListWSJSONRespModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CountryListWSJSONRespModel.h; path = PlayerProfile/CountryListWSJSONRespModel.h; sourceTree = "<group>"; };
-		2A3F0DE81A9EFDD800CA5A99 /* CountryListWSJSONRespModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CountryListWSJSONRespModel.m; path = PlayerProfile/CountryListWSJSONRespModel.m; sourceTree = "<group>"; };
-		2A3F0DEA1AA0C4DC00CA5A99 /* PlayerListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerListTableViewController.h; sourceTree = "<group>"; };
-		2A3F0DEB1AA0C4F600CA5A99 /* PlayerListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerListTableViewController.m; sourceTree = "<group>"; };
-		2A3F0DED1AA1A4DC00CA5A99 /* PlayerListWSJSONRespModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerListWSJSONRespModel.h; path = PlayerProfile/PlayerListWSJSONRespModel.h; sourceTree = "<group>"; };
-		2A3F0DEE1AA1A4F800CA5A99 /* PlayerListWSJSONRespModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerListWSJSONRespModel.m; path = PlayerProfile/PlayerListWSJSONRespModel.m; sourceTree = "<group>"; };
-		2A3F0DF01AA1A52F00CA5A99 /* PlayerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerModel.h; path = PlayerProfile/PlayerModel.h; sourceTree = "<group>"; };
-		2A3F0DF11AA1A53E00CA5A99 /* PlayerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerModel.m; path = PlayerProfile/PlayerModel.m; sourceTree = "<group>"; };
+		2A3F0DF71AA20B8900CA5A99 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeholder.png; path = PlayerProfile/Resources/Images/placeholder.png; sourceTree = "<group>"; };
+		2A3F0DF91AA20B9900CA5A99 /* CountryListWSJSONRespModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CountryListWSJSONRespModel.h; path = PlayerProfile/Entities/CountryListWSJSONRespModel.h; sourceTree = "<group>"; };
+		2A3F0DFA1AA20B9900CA5A99 /* CountryListWSJSONRespModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CountryListWSJSONRespModel.m; path = PlayerProfile/Entities/CountryListWSJSONRespModel.m; sourceTree = "<group>"; };
+		2A3F0DFB1AA20B9900CA5A99 /* CountryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CountryModel.h; path = PlayerProfile/Entities/CountryModel.h; sourceTree = "<group>"; };
+		2A3F0DFC1AA20B9900CA5A99 /* CountryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CountryModel.m; path = PlayerProfile/Entities/CountryModel.m; sourceTree = "<group>"; };
+		2A3F0DFD1AA20B9900CA5A99 /* PlayerListWSJSONRespModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerListWSJSONRespModel.h; path = PlayerProfile/Entities/PlayerListWSJSONRespModel.h; sourceTree = "<group>"; };
+		2A3F0DFE1AA20B9900CA5A99 /* PlayerListWSJSONRespModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerListWSJSONRespModel.m; path = PlayerProfile/Entities/PlayerListWSJSONRespModel.m; sourceTree = "<group>"; };
+		2A3F0DFF1AA20B9900CA5A99 /* PlayerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerModel.h; path = PlayerProfile/Entities/PlayerModel.h; sourceTree = "<group>"; };
+		2A3F0E001AA20B9900CA5A99 /* PlayerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerModel.m; path = PlayerProfile/Entities/PlayerModel.m; sourceTree = "<group>"; };
+		2A3F0E051AA20BB100CA5A99 /* PlayerProfileApiDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerProfileApiDataProvider.h; path = PlayerProfile/DataProvider/PlayerProfileApiDataProvider.h; sourceTree = "<group>"; };
+		2A3F0E061AA20BB100CA5A99 /* PlayerProfileApiDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerProfileApiDataProvider.m; path = PlayerProfile/DataProvider/PlayerProfileApiDataProvider.m; sourceTree = "<group>"; };
+		2A3F0E091AA20BDD00CA5A99 /* CountryListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryListTableViewController.h; sourceTree = "<group>"; };
+		2A3F0E0A1AA20BDD00CA5A99 /* CountryListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryListTableViewController.m; sourceTree = "<group>"; };
+		2A3F0E0B1AA20BDD00CA5A99 /* PlayerListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerListTableViewController.h; sourceTree = "<group>"; };
+		2A3F0E0C1AA20BDD00CA5A99 /* PlayerListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerListTableViewController.m; sourceTree = "<group>"; };
+		2A3F0E0F1AA20C3D00CA5A99 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = PlayerProfile/Storyboards/Main.storyboard; sourceTree = "<group>"; };
+		2A3F0E161AA230F700CA5A99 /* ImageUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageUtility.h; path = PlayerProfile/Utilities/ImageUtility.h; sourceTree = "<group>"; };
+		2A3F0E171AA230F700CA5A99 /* ImageUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageUtility.m; path = PlayerProfile/Utilities/ImageUtility.m; sourceTree = "<group>"; };
 		2A47FA531A9D955F00BAAF00 /* PlayerProfile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayerProfile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A47FA571A9D955F00BAAF00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A47FA581A9D955F00BAAF00 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -110,8 +111,6 @@
 		2A47FA6C1A9D955F00BAAF00 /* PlayerProfileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayerProfileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A47FA711A9D955F00BAAF00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A47FA721A9D955F00BAAF00 /* PlayerProfileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerProfileTests.m; sourceTree = "<group>"; };
-		2A47FA7C1A9D971000BAAF00 /* CountryListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryListTableViewController.h; sourceTree = "<group>"; };
-		2A47FA7D1A9D971000BAAF00 /* CountryListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryListTableViewController.m; sourceTree = "<group>"; };
 		2A47FA801A9DA77C00BAAF00 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		2A47FA811A9DA77C00BAAF00 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		2A47FA821A9DA77C00BAAF00 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -168,25 +167,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A3F0DB21A9DCA8500CA5A99 /* Weather */ = {
+		2A3F0DBE1A9EDAAF00CA5A99 /* DataProvider */ = {
 			isa = PBXGroup;
 			children = (
-				2A3F0DB31A9DCA8500CA5A99 /* NSDictionary+weather.h */,
-				2A3F0DB41A9DCA8500CA5A99 /* NSDictionary+weather.m */,
-				2A3F0DB51A9DCA8500CA5A99 /* NSDictionary+weather_package.h */,
-				2A3F0DB61A9DCA8500CA5A99 /* NSDictionary+weather_package.m */,
+				2A3F0E051AA20BB100CA5A99 /* PlayerProfileApiDataProvider.h */,
+				2A3F0E061AA20BB100CA5A99 /* PlayerProfileApiDataProvider.m */,
 			);
-			name = Weather;
-			path = PlayerProfile/Weather;
-			sourceTree = "<group>";
-		};
-		2A3F0DBE1A9EDAAF00CA5A99 /* PlayerProfileApiDataProvider */ = {
-			isa = PBXGroup;
-			children = (
-				2A3F0DBB1A9EDA9B00CA5A99 /* PlayerProfileApiDataProvider.h */,
-				2A3F0DBC1A9EDA9B00CA5A99 /* PlayerProfileApiDataProvider.m */,
-			);
-			name = PlayerProfileApiDataProvider;
+			name = DataProvider;
 			sourceTree = "<group>";
 		};
 		2A3F0DBF1A9EFA2100CA5A99 /* JSONModel */ = {
@@ -253,31 +240,78 @@
 		2A3F0DE61A9EFB7900CA5A99 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				2A3F0DE71A9EFDD800CA5A99 /* CountryListWSJSONRespModel.h */,
-				2A3F0DE31A9EFB7200CA5A99 /* CountryModel.h */,
-				2A3F0DED1AA1A4DC00CA5A99 /* PlayerListWSJSONRespModel.h */,
-				2A3F0DF01AA1A52F00CA5A99 /* PlayerModel.h */,
-				2A3F0DE81A9EFDD800CA5A99 /* CountryListWSJSONRespModel.m */,
-				2A3F0DE41A9EFB7200CA5A99 /* CountryModel.m */,
-				2A3F0DEE1AA1A4F800CA5A99 /* PlayerListWSJSONRespModel.m */,
-				2A3F0DF11AA1A53E00CA5A99 /* PlayerModel.m */,
+				2A3F0DF91AA20B9900CA5A99 /* CountryListWSJSONRespModel.h */,
+				2A3F0DFA1AA20B9900CA5A99 /* CountryListWSJSONRespModel.m */,
+				2A3F0DFB1AA20B9900CA5A99 /* CountryModel.h */,
+				2A3F0DFC1AA20B9900CA5A99 /* CountryModel.m */,
+				2A3F0DFD1AA20B9900CA5A99 /* PlayerListWSJSONRespModel.h */,
+				2A3F0DFE1AA20B9900CA5A99 /* PlayerListWSJSONRespModel.m */,
+				2A3F0DFF1AA20B9900CA5A99 /* PlayerModel.h */,
+				2A3F0E001AA20B9900CA5A99 /* PlayerModel.m */,
 			);
 			name = Entities;
+			sourceTree = "<group>";
+		};
+		2A3F0DF51AA20A4500CA5A99 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2A3F0DF61AA20A4E00CA5A99 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2A3F0DF61AA20A4E00CA5A99 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2A3F0DF71AA20B8900CA5A99 /* placeholder.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		2A3F0E081AA20BDD00CA5A99 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2A3F0E091AA20BDD00CA5A99 /* CountryListTableViewController.h */,
+				2A3F0E0A1AA20BDD00CA5A99 /* CountryListTableViewController.m */,
+				2A3F0E0B1AA20BDD00CA5A99 /* PlayerListTableViewController.h */,
+				2A3F0E0C1AA20BDD00CA5A99 /* PlayerListTableViewController.m */,
+			);
+			name = ViewControllers;
+			path = PlayerProfile/ViewControllers;
+			sourceTree = "<group>";
+		};
+		2A3F0E111AA20CEF00CA5A99 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2A3F0E0F1AA20C3D00CA5A99 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		2A3F0E121AA2309300CA5A99 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2A3F0E161AA230F700CA5A99 /* ImageUtility.h */,
+				2A3F0E171AA230F700CA5A99 /* ImageUtility.m */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		2A47FA4A1A9D955F00BAAF00 = {
 			isa = PBXGroup;
 			children = (
-				2A3F0DB91A9E3E9000CA5A99 /* Main.storyboard */,
+				2A3F0E121AA2309300CA5A99 /* Utilities */,
 				2A47FA7F1A9DA77C00BAAF00 /* AFNetworking */,
+				2A3F0DBE1A9EDAAF00CA5A99 /* DataProvider */,
 				2A3F0DE61A9EFB7900CA5A99 /* Entities */,
 				2A3F0DBF1A9EFA2100CA5A99 /* JSONModel */,
 				2A47FA551A9D955F00BAAF00 /* PlayerProfile */,
-				2A3F0DBE1A9EDAAF00CA5A99 /* PlayerProfileApiDataProvider */,
 				2A47FA6F1A9D955F00BAAF00 /* PlayerProfileTests */,
 				2A47FA541A9D955F00BAAF00 /* Products */,
+				2A3F0DF51AA20A4500CA5A99 /* Resources */,
+				2A3F0E111AA20CEF00CA5A99 /* Storyboards */,
 				2A47FA931A9DA77C00BAAF00 /* UIKit+AFNetworking */,
-				2A3F0DB21A9DCA8500CA5A99 /* Weather */,
+				2A3F0E081AA20BDD00CA5A99 /* ViewControllers */,
 			);
 			sourceTree = "<group>";
 		};
@@ -295,10 +329,6 @@
 			children = (
 				2A47FA5A1A9D955F00BAAF00 /* AppDelegate.h */,
 				2A47FA5B1A9D955F00BAAF00 /* AppDelegate.m */,
-				2A47FA7C1A9D971000BAAF00 /* CountryListTableViewController.h */,
-				2A3F0DEA1AA0C4DC00CA5A99 /* PlayerListTableViewController.h */,
-				2A47FA7D1A9D971000BAAF00 /* CountryListTableViewController.m */,
-				2A3F0DEB1AA0C4F600CA5A99 /* PlayerListTableViewController.m */,
 				2A47FA631A9D955F00BAAF00 /* Images.xcassets */,
 				2A47FA651A9D955F00BAAF00 /* LaunchScreen.xib */,
 				2A47FA561A9D955F00BAAF00 /* Supporting Files */,
@@ -464,9 +494,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A3F0DBA1A9E3E9000CA5A99 /* Main.storyboard in Resources */,
+				2A3F0DF81AA20B8900CA5A99 /* placeholder.png in Resources */,
 				2A47FA671A9D955F00BAAF00 /* LaunchScreen.xib in Resources */,
 				2A47FA641A9D955F00BAAF00 /* Images.xcassets in Resources */,
+				2A3F0E101AA20C3D00CA5A99 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,40 +518,39 @@
 				2A3F0DDF1A9EFA2100CA5A99 /* JSONHTTPClient.m in Sources */,
 				2A47FAA51A9DA77C00BAAF00 /* AFHTTPRequestOperation.m in Sources */,
 				2A47FAB21A9DA77C00BAAF00 /* UIImageView+AFNetworking.m in Sources */,
-				2A47FA7E1A9D971000BAAF00 /* CountryListTableViewController.m in Sources */,
 				2A47FAA61A9DA77C00BAAF00 /* AFHTTPRequestOperationManager.m in Sources */,
 				2A47FAB31A9DA77C00BAAF00 /* UIProgressView+AFNetworking.m in Sources */,
+				2A3F0E181AA230F700CA5A99 /* ImageUtility.m in Sources */,
 				2A47FAA81A9DA77C00BAAF00 /* AFNetworkReachabilityManager.m in Sources */,
-				2A3F0DB81A9DCA8500CA5A99 /* NSDictionary+weather_package.m in Sources */,
 				2A47FAAC1A9DA77C00BAAF00 /* AFURLResponseSerialization.m in Sources */,
+				2A3F0E041AA20B9900CA5A99 /* PlayerModel.m in Sources */,
 				2A3F0DDD1A9EFA2100CA5A99 /* NSArray+JSONModel.m in Sources */,
+				2A3F0E0D1AA20BDD00CA5A99 /* CountryListTableViewController.m in Sources */,
+				2A3F0E071AA20BB100CA5A99 /* PlayerProfileApiDataProvider.m in Sources */,
 				2A47FAAA1A9DA77C00BAAF00 /* AFURLConnectionOperation.m in Sources */,
 				2A3F0DD91A9EFA2100CA5A99 /* JSONModel.m in Sources */,
-				2A3F0DBD1A9EDA9B00CA5A99 /* PlayerProfileApiDataProvider.m in Sources */,
 				2A47FAB11A9DA77C00BAAF00 /* UIButton+AFNetworking.m in Sources */,
 				2A3F0DDE1A9EFA2100CA5A99 /* JSONAPI.m in Sources */,
 				2A47FAAF1A9DA77C00BAAF00 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
-				2A3F0DE91A9EFDD800CA5A99 /* CountryListWSJSONRespModel.m in Sources */,
+				2A3F0E031AA20B9900CA5A99 /* PlayerListWSJSONRespModel.m in Sources */,
 				2A3F0DDB1A9EFA2100CA5A99 /* JSONModelClassProperty.m in Sources */,
+				2A3F0E021AA20B9900CA5A99 /* CountryModel.m in Sources */,
 				2A3F0DE21A9EFA2100CA5A99 /* JSONValueTransformer.m in Sources */,
 				2A47FAA91A9DA77C00BAAF00 /* AFSecurityPolicy.m in Sources */,
 				2A3F0DE11A9EFA2100CA5A99 /* JSONKeyMapper.m in Sources */,
-				2A3F0DB71A9DCA8500CA5A99 /* NSDictionary+weather.m in Sources */,
+				2A3F0E0E1AA20BDD00CA5A99 /* PlayerListTableViewController.m in Sources */,
 				2A47FAB41A9DA77C00BAAF00 /* UIRefreshControl+AFNetworking.m in Sources */,
 				2A47FAB51A9DA77C00BAAF00 /* UIWebView+AFNetworking.m in Sources */,
 				2A47FAA71A9DA77C00BAAF00 /* AFHTTPSessionManager.m in Sources */,
+				2A3F0E011AA20B9900CA5A99 /* CountryListWSJSONRespModel.m in Sources */,
 				2A3F0DE01A9EFA2100CA5A99 /* JSONModel+networking.m in Sources */,
 				2A47FAB01A9DA77C00BAAF00 /* UIAlertView+AFNetworking.m in Sources */,
 				2A47FAAB1A9DA77C00BAAF00 /* AFURLRequestSerialization.m in Sources */,
 				2A3F0DDC1A9EFA2100CA5A99 /* JSONModelError.m in Sources */,
 				2A3F0DDA1A9EFA2100CA5A99 /* JSONModelArray.m in Sources */,
-				2A3F0DEC1AA0C4F600CA5A99 /* PlayerListTableViewController.m in Sources */,
 				2A47FAAE1A9DA77C00BAAF00 /* AFNetworkActivityIndicatorManager.m in Sources */,
-				2A3F0DE51A9EFB7200CA5A99 /* CountryModel.m in Sources */,
 				2A47FAAD1A9DA77C00BAAF00 /* AFURLSessionManager.m in Sources */,
-				2A3F0DEF1AA1A4F800CA5A99 /* PlayerListWSJSONRespModel.m in Sources */,
 				2A47FA5C1A9D955F00BAAF00 /* AppDelegate.m in Sources */,
-				2A3F0DF21AA1A53E00CA5A99 /* PlayerModel.m in Sources */,
 				2A47FA591A9D955F00BAAF00 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

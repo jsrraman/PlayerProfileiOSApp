@@ -19,8 +19,8 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p0E-5e-sCD" id="L8b-TC-eXJ">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cvg-ob-It2">
-                                            <rect key="frame" x="0.0" y="1" width="119" height="45"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="cvg-ob-It2">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="42"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="119" id="ylN-in-0za"/>
                                             </constraints>
@@ -42,7 +42,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="rUU-gF-jig" kind="show" id="RxT-8X-Odr"/>
+                                    <segue destination="rUU-gF-jig" kind="show" identifier="showPlayerList" id="RxT-8X-Odr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -72,8 +72,8 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RCM-DN-Oe6" id="SmV-VA-ABm">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ccr-tc-G6c">
-                                            <rect key="frame" x="0.0" y="0.0" width="125" height="43"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ccr-tc-G6c">
+                                            <rect key="frame" x="0.0" y="0.0" width="125" height="42"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="125" id="jh2-ch-pFQ"/>
                                             </constraints>
@@ -142,4 +142,7 @@
             <point key="canvasLocation" x="1846" y="334"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="placeholder.png" width="256" height="256"/>
+    </resources>
 </document>
