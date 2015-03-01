@@ -38,42 +38,25 @@
     return self;
 }
 
+// Gets country list
 - (void)getCountryList {
  
     // Construct the actual URL string
     NSString *fullUrlString = [NSString stringWithFormat:@"%@%@", PlayerProfileWebServicesBaseUrl, getCountryListUrl];
 
-//    // Try getting the country list and based on the response call the delegate methods in the registrar
-//    [self GET:fullUrlString parameters:nil
-//            success: ^(NSURLSessionDataTask *task, id responseObject) {
-//                [self.delegate playerProfileAPIType:PlayerProfileApiGetCountryList didSucceed:responseObject];
-//            }
-//
-//            failure: ^(NSURLSessionDataTask *task, NSError *error) {
-//                [self.delegate didFailWithError:error];
-//            }];
-    
     [self getApiResponse:fullUrlString forPlayerProfileApiType:PlayerProfileApiGetCountryList];
 }
 
+// Gets player list for the given country id
 - (void)getPlayerListForCountryId:(int)countryId {
     
     NSMutableString *fullUrlString = [NSMutableString stringWithFormat:@"%@%@", PlayerProfileWebServicesBaseUrl, getPlayerListUrl];
     [fullUrlString appendFormat:@"%d", countryId];
     
-//    // Try getting the player list and based on the response call the delegate methods in the registrar
-//    [self GET:fullUrlString parameters:nil
-//      success: ^(NSURLSessionDataTask *task, id responseObject) {
-//          [self.delegate playerProfileAPIType:PlayerProfileApiGetPlayerListForCountry didSucceed:responseObject];
-//      }
-//     
-//      failure: ^(NSURLSessionDataTask *task, NSError *error) {
-//          [self.delegate didFailWithError:error];
-//      }];
-    
     [self getApiResponse:fullUrlString forPlayerProfileApiType:PlayerProfileApiGetPlayerListForCountry];
 }
 
+// Scrapes player list for the given country id
 - (void)scrapePlayerListForCountryId:(int)countryId forCountryName:(NSString *)countryName {
     
     NSMutableString *fullUrlString = [NSMutableString stringWithFormat:@"%@%@", PlayerProfileWebServicesBaseUrl, scrapePlayerListUrlPart1];
@@ -85,6 +68,25 @@
     [self getApiResponse:fullUrlString forPlayerProfileApiType:PlayerProfileApiScrapePlayerListForCountry];
 }
 
+// Gets player profile for the given player id
+- (void)getPlayerProfileForPlayerId:(int)playerId {
+    
+    NSMutableString *fullUrlString = [NSMutableString stringWithFormat:@"%@%@", PlayerProfileWebServicesBaseUrl, getPlayerProfileUrl];
+    [fullUrlString appendFormat:@"%d", playerId];
+    
+    [self getApiResponse:fullUrlString forPlayerProfileApiType:PlayerProfileApiGetPlayerProfileForPlayerId];
+}
+
+// Scrapes player profile for the given player id
+- (void)scrapePlayerProfileForPlayerId:(int)playerId {
+    
+    NSMutableString *fullUrlString = [NSMutableString stringWithFormat:@"%@%@", PlayerProfileWebServicesBaseUrl, scrapePlayerProfileUrl];
+    [fullUrlString appendFormat:@"%d", playerId];
+    
+    [self getApiResponse:fullUrlString forPlayerProfileApiType:PlayerProfileApiScrapePlayerProfileForPlayerId];
+}
+
+// Wrapper method for getting the HTTP response for the given player profile api url
 - (void) getApiResponse:(NSString *)fullUrlString forPlayerProfileApiType:(PlayerProfileApiType)apiType {
     
     // Try hitting the web services end point

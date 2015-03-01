@@ -11,9 +11,10 @@
 static NSString* const PlayerProfileWebServicesBaseUrl = @"http://10.0.0.114:3000";
 static NSString* const getCountryListUrl = @"/players/countries";
 static NSString* const getPlayerListUrl = @"/players/country?countryId=";
-
 static NSString* const scrapePlayerListUrlPart1 = @"/scrape/players/country?countryId=";
 static NSString* const scrapePlayerListUrlPart2 = @"&name=";
+static NSString* const getPlayerProfileUrl = @"/players?playerId=";
+static NSString* const scrapePlayerProfileUrl = @"/scrape/player?playerId=";
 
 // API list
 typedef NS_ENUM(NSInteger, PlayerProfileApiType) {
@@ -21,8 +22,8 @@ typedef NS_ENUM(NSInteger, PlayerProfileApiType) {
     PlayerProfileApiScrapeCountryList,
     PlayerProfileApiGetPlayerListForCountry,
     PlayerProfileApiScrapePlayerListForCountry,
-    PlayerProfileApiScrapePlayerProfileForPlayerID,
-    PlayerProfileApiGetPlayerProfileForPlayerID
+    PlayerProfileApiScrapePlayerProfileForPlayerId,
+    PlayerProfileApiGetPlayerProfileForPlayerId
 };
 
 @protocol PlayerProfileApiDataProviderDelegate;
@@ -36,6 +37,8 @@ typedef NS_ENUM(NSInteger, PlayerProfileApiType) {
 - (void)getCountryList;
 - (void)getPlayerListForCountryId:(int)countryId;
 - (void)scrapePlayerListForCountryId:(int)countryId forCountryName:(NSString *)countryName;
+- (void)getPlayerProfileForPlayerId:(int)playerId;
+- (void)scrapePlayerProfileForPlayerId:(int)playerId;
 
 @end
 

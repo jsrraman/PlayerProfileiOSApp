@@ -11,6 +11,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "PlayerListWSJSONRespModel.h"
 #import "ImageUtility.h"
+#import "PlayerDetailViewController.h"
 
 @interface PlayerListTableViewController ()
 
@@ -28,7 +29,7 @@ static NSString *cellIdentifier = @"Player";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self initPlayerListForCountryId:self.selCountryModel.countryId];
+    [self populatePlayerListForCountryId:self.selCountryModel.countryId];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,8 +37,7 @@ static NSString *cellIdentifier = @"Player";
     // Dispose of any resources that can be recreated.
 }
 
--(void) initPlayerListForCountryId:(int)countryId {
-    // Try getting the country list
+-(void) populatePlayerListForCountryId:(int)countryId {
     self.playerProfileApiDataProvider = [PlayerProfileApiDataProvider getInstance];
     self.playerProfileApiDataProvider.delegate = self;
     
@@ -147,6 +147,8 @@ static NSString *cellIdentifier = @"Player";
                                           scaledToMaxWidth:imageView.frame.size.width
                                                  maxHeight:imageView.frame.size.height];
     
+    [imageView setImage:resizedImage];
+    
     // Create a weak reference for the table view cell to avoid strong reference inside the block. Read below for more understanding
     // A block forms a strong reference to variables it captures. If you use  self within a block,
     // the block forms a strong reference to self, so if  self also has a strong reference to the block (which it typically does), a strong
@@ -205,14 +207,29 @@ static NSString *cellIdentifier = @"Player";
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"showPlayerDetail"]) {
+        // Get the indexPath from tableview
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        // Get the relevant entity object from the selected row index
+        PlayerModel *playerModel = [self.playerModel objectAtIndex:indexPath.row];
+        
+        // Pass the selected country model to the PlayerListTableViewController
+        // Note: PlayerDetailViewController is embedded inside navigation view controller, so access accordingly as below
+        UINavigationController *uiNavigationController = (UINavigationController *)segue.destinationViewController;
+        
+        // The view controller at the top of the stack is player detail view controller
+        PlayerDetailViewController *playerDetailViewController = (PlayerDetailViewController *)[uiNavigationController topViewController];
+        
+        playerDetailViewController.playerModel = playerModel;
+    }
 }
-*/
 
 @end

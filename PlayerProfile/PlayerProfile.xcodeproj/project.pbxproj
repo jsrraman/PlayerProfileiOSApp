@@ -27,6 +27,7 @@
 		2A3F0E0E1AA20BDD00CA5A99 /* PlayerListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0E0C1AA20BDD00CA5A99 /* PlayerListTableViewController.m */; };
 		2A3F0E101AA20C3D00CA5A99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A3F0E0F1AA20C3D00CA5A99 /* Main.storyboard */; };
 		2A3F0E181AA230F700CA5A99 /* ImageUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0E171AA230F700CA5A99 /* ImageUtility.m */; };
+		2A3F0E1B1AA3064400CA5A99 /* PlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3F0E1A1AA3064400CA5A99 /* PlayerDetailViewController.m */; };
 		2A47FA591A9D955F00BAAF00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A47FA581A9D955F00BAAF00 /* main.m */; };
 		2A47FA5C1A9D955F00BAAF00 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A47FA5B1A9D955F00BAAF00 /* AppDelegate.m */; };
 		2A47FA641A9D955F00BAAF00 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A47FA631A9D955F00BAAF00 /* Images.xcassets */; };
@@ -101,6 +102,8 @@
 		2A3F0E0F1AA20C3D00CA5A99 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = PlayerProfile/Storyboards/Main.storyboard; sourceTree = "<group>"; };
 		2A3F0E161AA230F700CA5A99 /* ImageUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageUtility.h; path = PlayerProfile/Utilities/ImageUtility.h; sourceTree = "<group>"; };
 		2A3F0E171AA230F700CA5A99 /* ImageUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageUtility.m; path = PlayerProfile/Utilities/ImageUtility.m; sourceTree = "<group>"; };
+		2A3F0E191AA3064400CA5A99 /* PlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerDetailViewController.h; sourceTree = "<group>"; };
+		2A3F0E1A1AA3064400CA5A99 /* PlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailViewController.m; sourceTree = "<group>"; };
 		2A47FA531A9D955F00BAAF00 /* PlayerProfile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayerProfile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A47FA571A9D955F00BAAF00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A47FA581A9D955F00BAAF00 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -271,6 +274,8 @@
 		2A3F0E081AA20BDD00CA5A99 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2A3F0E191AA3064400CA5A99 /* PlayerDetailViewController.h */,
+				2A3F0E1A1AA3064400CA5A99 /* PlayerDetailViewController.m */,
 				2A3F0E091AA20BDD00CA5A99 /* CountryListTableViewController.h */,
 				2A3F0E0A1AA20BDD00CA5A99 /* CountryListTableViewController.m */,
 				2A3F0E0B1AA20BDD00CA5A99 /* PlayerListTableViewController.h */,
@@ -545,6 +550,7 @@
 				2A3F0E011AA20B9900CA5A99 /* CountryListWSJSONRespModel.m in Sources */,
 				2A3F0DE01A9EFA2100CA5A99 /* JSONModel+networking.m in Sources */,
 				2A47FAB01A9DA77C00BAAF00 /* UIAlertView+AFNetworking.m in Sources */,
+				2A3F0E1B1AA3064400CA5A99 /* PlayerDetailViewController.m in Sources */,
 				2A47FAAB1A9DA77C00BAAF00 /* AFURLRequestSerialization.m in Sources */,
 				2A3F0DDC1A9EFA2100CA5A99 /* JSONModelError.m in Sources */,
 				2A3F0DDA1A9EFA2100CA5A99 /* JSONModelArray.m in Sources */,
