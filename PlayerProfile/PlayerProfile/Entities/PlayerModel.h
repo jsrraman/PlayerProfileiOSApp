@@ -18,5 +18,9 @@
 @property (nonatomic, strong) NSString* playerUrl;
 @property (nonatomic, strong) NSString* name;
 @property (nonatomic, strong) NSString<Optional>* thumbnailUrl;
+@property (nonatomic, strong) NSString<Optional>* country;
+@property (nonatomic, strong) NSString<Optional>* age;
+@property (nonatomic, strong) NSString<Optional>* battingStyle;
+@property (nonatomic, strong) NSString<Optional>* bowlingStyle;
 
 @end

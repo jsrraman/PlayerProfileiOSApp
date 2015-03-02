@@ -8,7 +8,7 @@
 
 #import "AFHTTPSessionManager.h"
 
-static NSString* const PlayerProfileWebServicesBaseUrl = @"http://10.0.0.114:3000";
+static NSString* const PlayerProfileWebServicesBaseUrl = @"http://192.168.1.102:3000";
 static NSString* const getCountryListUrl = @"/players/countries";
 static NSString* const getPlayerListUrl = @"/players/country?countryId=";
 static NSString* const scrapePlayerListUrlPart1 = @"/scrape/players/country?countryId=";

@@ -14,6 +14,10 @@
 @interface PlayerDetailViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *playerThumbnail;
 @property (strong, nonatomic) IBOutlet UILabel *name;
+@property (strong, nonatomic) IBOutlet UILabel *country;
+@property (strong, nonatomic) IBOutlet UILabel *age;
+@property (strong, nonatomic) IBOutlet UILabel *battingStyle;
+@property (weak, nonatomic) IBOutlet UILabel *bowlingStyle;
 @property (strong, nonatomic) PlayerProfileApiDataProvider *playerProfileApiDataProvider;
 @end
 
@@ -67,7 +71,29 @@
     
     
     // Set the player name
-    self.name.text = self.playerModel.name;
+    self.name.text = [self getDefaultValueForAttribute:self.playerModel.name];
+    
+    // Country
+    self.country.text = [self getDefaultValueForAttribute:self.playerModel.country];
+    
+    // Age
+    self.age.text = [self getDefaultValueForAttribute:self.playerModel.age];
+    
+    // Batting Style
+    self.battingStyle.text = [self getDefaultValueForAttribute:self.playerModel.battingStyle];
+    
+    // Bowling Style
+    self.bowlingStyle.text = [self getDefaultValueForAttribute:self.playerModel.bowlingStyle];
+}
+
+-(NSString *) getDefaultValueForAttribute:(NSString *)attribute {
+    
+    NSString *value = @"NA";
+    
+    if ([attribute isEqualToString:@""])
+        return value;
+    else
+        return attribute;
 }
 
 #pragma mark - PlayerProfileApiDataProvider delegate methods
