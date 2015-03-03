@@ -23,6 +23,7 @@
 		2A47FA641A9D955F00BAAF00 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A47FA631A9D955F00BAAF00 /* Images.xcassets */; };
 		2A47FA671A9D955F00BAAF00 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A47FA651A9D955F00BAAF00 /* LaunchScreen.xib */; };
 		2A47FA731A9D955F00BAAF00 /* PlayerProfileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A47FA721A9D955F00BAAF00 /* PlayerProfileTests.m */; };
+		2A54EB361AA5A5D200088729 /* uiss.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A54EB351AA5A5D200088729 /* uiss.json */; };
 		520D0EC9CD69084D79BC72A9 /* libPods-PlayerProfile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46808CF0231A9BDDB1CB13E6 /* libPods-PlayerProfile.a */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		2A47FA6C1A9D955F00BAAF00 /* PlayerProfileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayerProfileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A47FA711A9D955F00BAAF00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A47FA721A9D955F00BAAF00 /* PlayerProfileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerProfileTests.m; sourceTree = "<group>"; };
+		2A54EB351AA5A5D200088729 /* uiss.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = uiss.json; sourceTree = "<group>"; };
 		46808CF0231A9BDDB1CB13E6 /* libPods-PlayerProfile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlayerProfile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5315829F9E546F0C425BCC5 /* Pods-PlayerProfile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayerProfile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlayerProfile/Pods-PlayerProfile.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,6 +195,7 @@
 			children = (
 				2A47FA5A1A9D955F00BAAF00 /* AppDelegate.h */,
 				2A47FA5B1A9D955F00BAAF00 /* AppDelegate.m */,
+				2A54EB351AA5A5D200088729 /* uiss.json */,
 				2A47FA631A9D955F00BAAF00 /* Images.xcassets */,
 				2A47FA651A9D955F00BAAF00 /* LaunchScreen.xib */,
 				2A47FA561A9D955F00BAAF00 /* Supporting Files */,
@@ -329,6 +332,7 @@
 				2A47FA671A9D955F00BAAF00 /* LaunchScreen.xib in Resources */,
 				2A47FA641A9D955F00BAAF00 /* Images.xcassets in Resources */,
 				2A3F0E101AA20C3D00CA5A99 /* Main.storyboard in Resources */,
+				2A54EB361AA5A5D200088729 /* uiss.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

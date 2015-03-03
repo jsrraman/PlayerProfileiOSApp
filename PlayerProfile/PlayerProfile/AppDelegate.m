@@ -8,19 +8,28 @@
 
 #import "AppDelegate.h"
 #import "AFNetworkActivityIndicatorManager.h"
+#import "UISS.h"
 
 @interface AppDelegate ()
-
+@property(nonatomic, strong) UISS *uiss;    // UISS property for CSS type of styling in our app
 @end
 
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
     // Override point for customization after application launch.
     
+    // To show busy indicator at the top bar whenever there is a network request
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
-
+    
+    // Import From defualt uiss.json file in supporting files
+    self.uiss = [UISS configureWithDefaultJSONFile];
+    
+    // Enables status bar at top of app.
+    //self.uiss.statusWindowEnabled = YES;
+    
     return YES;
 }
 

@@ -1,0 +1,1 @@
+PODS_PLAYERPROFILE_UISS_OTHER_LDFLAGS = -framework "Foundation" -framework "UIKit"

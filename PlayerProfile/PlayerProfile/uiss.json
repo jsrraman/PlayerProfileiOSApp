@@ -1,0 +1,13 @@
+{
+    "Variables": {
+        "tint":"#3299cc",
+        "lightCoral": "#F08080",
+        "paleGoldenRod" : "#EEE8AA"
+    },
+    "UINavigationBar": {
+        "-barTintColor": "lightGray"
+    },
+    "UITableViewCell": {
+        "backgroundColor": "$paleGoldenRod"
+    },
+}
