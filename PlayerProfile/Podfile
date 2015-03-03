@@ -1,0 +1,13 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '7.0'
+
+target 'PlayerProfile' do
+source 'https://github.com/CocoaPods/Specs.git'
+pod 'AFNetworking', '~> 2.5'
+pod 'JSONModel'
+end
+
+target 'PlayerProfileTests' do
+
+end
+

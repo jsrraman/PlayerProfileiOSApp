@@ -81,6 +81,7 @@
     
     // Batting Style
     self.battingStyle.text = [self getDefaultValueForAttribute:self.playerModel.battingStyle];
+    [self.battingStyle sizeToFit];
     
     // Bowling Style
     self.bowlingStyle.text = [self getDefaultValueForAttribute:self.playerModel.bowlingStyle];
